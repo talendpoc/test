@@ -142,58 +142,18 @@
     <elementParameter field="TEXT" name="HADOOP_LOGIN" show="false" value="&quot;kerberos&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="288">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
-    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_RAC"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12"/>
-    <elementParameter field="TEXT" name="RAC_URL" value="&quot;10.123.94.244:1521&quot;"/>
-    <elementParameter field="CHECK" name="USE_TNS_FILE" show="false" value="false"/>
-    <elementParameter field="FILE" name="TNS_FILE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TNS_EDITOR" name="TNS_EDITOR" show="false" value=""/>
-    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;10.123.94.244&quot;"/>
-    <elementParameter field="TEXT" name="TYPE" show="false" value="Oracle"/>
-    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;1521&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;eods&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;exaloader&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="z6EJ8ZkpjqpdDYYZXMoTWb69aP66WKVQ"/>
-    <elementParameter field="CHECK" name="USE_SSL" value="false"/>
-    <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="0RMsyjmybrE="/>
-    <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
-    <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="0RMsyjmybrE="/>
-    <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
-    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" show="false" value=""/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:thin:USER/MDP@server&quot;"/>
-    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
-  </node>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHDFSConnection_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b017e2dc-afbc-4dd9-8742-3187756d5440"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XtEmq4x7ECfnX6gvNRczHJSCiHcChYc44GNjZaxetYou8UpZQjD90qQHwSAuXKD0iWjkvSfmLl4j
-z9MUZsKwTQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_df3063bf-6708-4331-979f-8d0c1af0c615"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SWpu7rbrgslZtFudqFm+mprJC49LEwzaMF8SwLeWRay+Gj6f4csaCwvm8jbF5A5l7KpZdI6giv2P
-J6uIivScqA==</DigestValue></Reference></SignedInfo><SignatureValue>hwUoywqy32OJ9c5DF/DEJgJSBn2hLpbPV0kPyAVfwjRkXZomrzoFewqAvkybEtMJw/X/Qt5YY414
-6dgqZGOnOS9Di6NEHaP2cD0F8YdZoytQuMi0FrQ86yQNwwEkmrQZRvsuWrXRhRACv5KAVygmDP6L
-IjRKk+7gCK0MkE7K3Zq683WPUdtAQY7kHG9+ylbarPhJ8hiMcGa/C48oqrFL33mtSEfNldJd9KoQ
-y6kWeDi/3yGQ9fV0o/yNBUwfa5jxdCkK62jHUOXNQoqGfPFLTFASAWosTD8J39cp/qjOkqtrSwrz
-o1++pdp1s2jV8YnunOxd6hBOoj4KjQp9gMCQSg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_cf8d4952-782a-4a60-be80-ea4175e0d70e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Zs9LVX2AZMKKEAidTQLyLvsv3ZUjg7VhUv5Wc3mck5Rt1KsKpCY3y6jsFcW2qWAQPZKTHdgU+ctH
+m3FpFBO3/g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_136d507f-873b-471d-9d4f-aa93a6a868d6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uFq4ns8nDR6QPYE0owA30S7Ne+xF6s4ldIzXzFLKX39X2PvBsHFOzasjlMegCf5z9z5VkJrSbJm7
+9EGJOXrKAQ==</DigestValue></Reference></SignedInfo><SignatureValue>iVgcTrj3GQAEES/z5mXYpIeTg9w6x97963g+dnUgnlOzDkckhX4S+ssDrEKVxy3dya2IcfZa2mNU
+2UddNK7ZY61dhp3aOtVFjFcf7/FleA6ZHRJr3VqhBYEnXxDCIC/P221cY2aLROKKjCnO+flTQ5PN
+ImIfTPsij2rNi7pkYGfEHzCxot+XE40rJdcYN5FLhzrkRCE+5klgCzm6BvyjjYwlkz/+P3l+7Mu2
+zQsBSc42posJtenSphYS4yALwiR3AQuSqVO/F+T0wcHrH+d8lijIgn0oLs9n9m/GZqASoq2qsfuw
+njr8KJl6dtvcvaeVD0OThrxB2mHrwPbBZ21cBg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -215,4 +175,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_df3063bf-6708-4331-979f-8d0c1af0c615" Target="#_b017e2dc-afbc-4dd9-8742-3187756d5440"><Timestamp>2019-07-04 04:48:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_136d507f-873b-471d-9d4f-aa93a6a868d6" Target="#_cf8d4952-782a-4a60-be80-ea4175e0d70e"><Timestamp>2019-07-04 04:49:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
