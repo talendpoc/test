@@ -106,7 +106,6 @@
   </parameters>
   <node componentName="tHDFSConnection" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="32" posY="64" sizeX="96" sizeY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHDFSConnection_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_33lhUZ1xEemiobSKr_XuWw"/>
     <elementParameter field="HADOOP_LIBRARIES" name="HDFS" show="false" value=""/>
@@ -145,6 +144,7 @@
   </node>
   <node componentName="tHiveConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHiveConnection_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_oAZUQJ1zEemiobSKr_XuWw"/>
     <elementParameter field="HADOOP_LIBRARIES" name="HIVE" show="false" value=""/>
@@ -257,6 +257,7 @@
   </node>
   <node componentName="tHiveInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHiveInput_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_8NW9oJ1DEemtjd_PHZZ6Eg"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -388,7 +389,6 @@
   </node>
   <node componentName="tHDFSList" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHDFSList_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_33lhUZ1xEemiobSKr_XuWw"/>
     <elementParameter field="HADOOP_LIBRARIES" name="HDFS" show="false" value=""/>
@@ -442,7 +442,6 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="String Hello = ((String)globalMap.get(&quot;tHDFSList_1_CURRENT_FILE&quot;));&#10;System.out.println (Hello);&#10;&#10;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -578,7 +577,7 @@
     <elementParameter field="TEXT" name="HEADER" value="0"/>
     <elementParameter field="CHECK" name="CUSTOM_ENCODING" value="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="CUSTOM"/>
     <elementParameter field="COLUMN_LIST" name="KEYCOLUMN" show="false" value="RECHARGE_LOG_ID"/>
     <elementParameter field="COLUMN_LIST" name="VALUECOLUMN" show="false" value="RECHARGE_LOG_ID"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="NOTE : Only boolean, byte, byte[], double, float, integer,&#10;&#9;&#9;&#9;&#9;long, short, string are currently supported for key class and value&#10;&#9;&#9;&#9;&#9;columns fields&#10;&#9;&#9;&#9;"/>
@@ -1116,7 +1115,7 @@
       <column comment="" key="false" length="0" name="BONUS_OFFERING_ID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="256" posY="192">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
@@ -2182,533 +2181,9 @@
         <mapperTableEntries expression="row1.additionalinfo5 " name="additionalinfo5" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.BONUS_OFFERING_ID " name="BONUS_OFFERING_ID" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="RECHARGE_LOG_ID" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="RECHARGE_CODE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="RECHARGE_AMT" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ACCT_ID" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="SUB_ID" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="PRI_IDEN" nullable="true" type="id_String"/>
-        <mapperTableEntries name="THIRD_PARTY_NUMBER_" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ORIGINAL_AMT" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CURRENCY_RATE" nullable="true" type="id_Float"/>
-        <mapperTableEntries name="CONVERS" nullable="true" type="id_Float"/>
-        <mapperTableEntries name="RECHARGE_TRANS_ID" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="EXT_TRANS_TYPE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="EXT_TRANS_ID" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="ACCESS_METHOD" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="BATCH_NO" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="OFFERING_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PAYMENT_TYPE" nullable="true" type="id_Character"/>
-        <mapperTableEntries name="RECHARGE_TAX" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="RECHARGE_PENALTY" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="RECHARGE_TYPE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CHANNE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RECHARGE_REASON" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RESULT_CODE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ERROR_TYPE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="VALID_DAY_ADDED" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="DIAMETER_SESSIONID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="DEPT_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ENTRY_DATE" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="RECON_DATE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RECON_STATUS" nullable="true" type="id_String"/>
-        <mapperTableEntries name="REVERSAL_TRANS_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="REVERSAL_REASON_CODE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="REVERSAL_OPER_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="REVERSAL_DEPT_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="REVERSAL_DATE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="STATUS" nullable="true" type="id_Character"/>
-        <mapperTableEntries name="REMARK" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BE_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="BE_CODE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="REGION_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="REGION_CODE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CARD_SEQUENCE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CARD_PIN_NUMBER" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CARD_BATCH_NO" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CARD_STATUS" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CARD_COS_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CARD_SP_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CARD_AMOUNT" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CARD_VALIDITY" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="VOUCHER_ENCRYPT_NUMBER" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHECK_NO" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHECK_DATE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CREDIT_CARD_NO" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CREDIT_CARD_NAME" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CREDIT_CARD_TYPE_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CC_EXPIRY_DATE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CC_AUTHORIZATION_CODE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BANK_CODE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BANK_BRANCH_CODE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_NO" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BANK_ACCT_NAME" nullable="true" type="id_String"/>
-        <mapperTableEntries name="LOAN_AMOUNT" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="LOAN_POUNDATE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ACCT_ID1" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="BALANCE_TYPE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CUR_BALANCE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CHG_BALANCE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="PRE_APPLY_TIME" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="CURRENCYE_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="OPER_TYPE" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ACCT_ID2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCYE_ID1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_I" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCYE_ID2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENNUMBCYE_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYNUMB" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCYE_ID3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCYE_ID4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCYE_ID5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APP" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCYE_ID6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCYE_ID7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_BALANCE9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_BALANCE9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCYE_ID8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UN" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UN1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASNUMBURE_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_AMOUNT9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CHG_AMOUNT9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME19" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME19" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME19" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME20" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME20" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME20" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME21" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME21" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE19" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME21" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME22" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME22" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE20" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANC" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME22" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME23" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME23" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE21" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME23" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME24" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME24" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE22" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME24" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME25" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME25" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE23" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME25" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME26" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME26" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE24" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME26" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME27" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME27" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE25" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID19" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME27" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME28" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME28" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE26" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_ID20" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ACCT_BALANCE_ID18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BALANCE_TYPE18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_BALANCE9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME28" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME29" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME29" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENCY_ID10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE27" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID9" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME29" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME30" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME30" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE28" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID10" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME30" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME31" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME31" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE29" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID11" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME31" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME32" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME32" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE30" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="NUMBER_20_" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Column411" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME32" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME33" nullable="true" type="id_String"/>
-        <mapperTableEntries name="__CUR_EXPDATE_1IRE_TIME4_" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASNUMBURE_IDER_10_" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYNUMB1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID12" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUN" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME33" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME34" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME33" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE31" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME34" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME35" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME34" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE32" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID14" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME35" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME36" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME35" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TY" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID15" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_A" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT6" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME36" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME37" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME36" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE33" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID16" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT7" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME37" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME38" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME37" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEASURE_ID17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE34" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_TYPE19" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_OWN_ID19" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_TYPE17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FREE_UNIT_ID17" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_AMOUNT18" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CURRENT_AMOUNT8" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_APPLY_TIME38" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PRE_EXPIRE_TIME39" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CUR_EXPIRE_TIME38" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FU_MEAS" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OPER_TYPE35" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RechargeAreaCode" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="RechargeCellID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BrandID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="MainOfferingID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="PayType" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="StartTimeOfBillCycle" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="Account" nullable="true" type="id_String"/>
-        <mapperTableEntries name="MainBalanceInfo" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ChgBalanceInfo" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ChgFreeUnitInfo" nullable="true" type="id_String"/>
-        <mapperTableEntries name="UserState" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="OldUserState" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CardValueAdded" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ValidityAdded" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="TradeType" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="AgentName" nullable="true" type="id_String"/>
-        <mapperTableEntries name="AdditionalInfo" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BankCode" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SubIdentityType" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="messageId" nullable="true" type="id_Long"/>
-        <mapperTableEntries name="EventInfo" nullable="true" type="id_String"/>
-        <mapperTableEntries name="EventName" nullable="true" type="id_String"/>
-        <mapperTableEntries name="EventClass" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RatingInput0" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="RatingInput1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RatingInput2" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="RatingInput3" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="RatingInput4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ChargeCode" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SubTradeType" nullable="true" type="id_String"/>
-        <mapperTableEntries name="UnliAccountType" nullable="true" type="id_String"/>
-        <mapperTableEntries name="additionalinfo1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="additionalinfo2" nullable="true" type="id_String"/>
-        <mapperTableEntries name="additionalinfo3" nullable="true" type="id_String"/>
-        <mapperTableEntries name="additionalinfo4" nullable="true" type="id_String"/>
-        <mapperTableEntries name="additionalinfo5" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BONUS_OFFERING_ID" nullable="true" type="id_String"/>
-      </inputTables>
     </nodeData>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="192">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
@@ -4297,7 +3772,6 @@
     </metadata>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tHDFSConnection_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tHDFSConnection_1" target="tHDFSList_1">
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tHDFSConnection_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tHDFSConnection_1" target="tHDFSInput_1">
@@ -4305,18 +3779,13 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tHiveConnection_1" offsetLabelX="0" offsetLabelY="0" source="tHiveConnection_1" target="tHiveInput_1">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
   </connection>
   <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tHDFSList_1" offsetLabelX="0" offsetLabelY="0" source="tHDFSList_1" target="tJava_1">
     <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
     <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate1"/>
-  </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHDFSInput_1" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_1" target="tMap_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -4348,13 +3817,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2e4a1af5-e6b6-4f36-bcdc-a16a7164d271"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IrBwgpaVhJnNy5QLUNqVxStRMs7zkjUxbsQi3V3m9SkQxDvK0k8ViJJNuS7s0lqkvopS0eWGW0BA
-kShVxDdI/Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e209b78f-aada-4397-b1bc-58d52a268e4d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cmDXCCy/7rlnQKtHJcf9qtx2qHR5bExThE786ELlqmy7j5CRjzwmc5LqVgsQe5ImSpTRVOZu02bO
-L2td+X0phg==</DigestValue></Reference></SignedInfo><SignatureValue>LgUuEmedm9miMESLMYa1DT5ZKRlDmF1yRqyXn90cInVqjHDC4iiS3M72nH9CeJPrcn+3IxzKJogb
-476I5D4ScvIMlXhuV6Va/rjeKAhPyAS2MHqQRpgdr1zDQcxBHQx9l+4HXRjPCnly4y9kzPQaFQWd
-vKs2cab5hPuikfFubmQ2JuCR6MxXXGv/dXkwBuT58ow9XPesW5FHaYPyXfKCQqcFF+nDqAKdCB8u
-rd9kYNslFFnnpuyKJE5b+gqs8bqThCYlG0o2aSA3WjQS8qXCrWz3CSC/r6PYUR2HzRo8rz1lKC+B
-A/KxLN2Hv/A40VTlDfz+7piLeVNQr3kGdmuZhw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a7734102-39a4-4ca4-9adc-8c9019a4010b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>NRqjD7MvZ8oqUeauZUK75kdCRerMw6QgY/egeWYLtT2o7FeRVKr1AFhZ0z1lM9ToquG1KafsefdP
+jea9MJyKBQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_40296cbd-3257-4af5-9baf-4114a2a43be8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fdJ0e4loJicEgGVMDYouCNdPUM2iK9/Bj8g+OKVGrDpFnMc9UlN9Pe98/QSWbHDg4QT/3/gsHMyF
+Ko4eGa8Vog==</DigestValue></Reference></SignedInfo><SignatureValue>CAqR61+zVuhquPVh2gfN/DvgwLZ27jWJrBkRfvGkXwQHi9kckSUjbBl2zNJ8qkPhDtIhIwAtSOqk
+yJ6PBmUqlNszJvlMRsXXMZzq0d2EZgMMAImwqo0/Rf2iPSVK3DwPL2om+8GMQ868VMAg2eBDkWSN
+OPhF1/D/+xBI4EPTsTXMJh9+ZauGrkWb9WlAWLwJcf1qKeQWkEGI1NTM7/WIV1J7qzPTjeH9drpg
+2ShWR1CqvOtqq7kTaAWyWDvYjvmqLR/UCVeQ/YsNoOH1Rzhcp9pEI95cMZwh8aLq/iuw+or5qAR/
+tz6XmGGEghVSi7opUHTlF1zZ6aMnxqhVsJFbhA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -4376,4 +3850,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e209b78f-aada-4397-b1bc-58d52a268e4d" Target="#_2e4a1af5-e6b6-4f36-bcdc-a16a7164d271"><Timestamp>2019-07-04 07:31:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_40296cbd-3257-4af5-9baf-4114a2a43be8" Target="#_a7734102-39a4-4ca4-9adc-8c9019a4010b"><Timestamp>2019-07-04 07:59:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
