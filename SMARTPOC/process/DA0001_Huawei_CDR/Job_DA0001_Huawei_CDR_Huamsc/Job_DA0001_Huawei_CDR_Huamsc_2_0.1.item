@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value=""/>
-    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value=""/>
-    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value=""/>
-    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value=""/>
-    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value=""/>
-    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value=""/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/huamsc/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/nsnmsc/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="&quot;*&quot;"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/staging/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/raw/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/derived/"/>
+  </context>
+  <context confirmationNeeded="false" name="DEV">
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/huamsc/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/nsnmsc/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="&quot;*&quot;"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/staging/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/raw/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/derivaed/"/>
+  </context>
+  <context confirmationNeeded="false" name="PRD">
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/huamsc/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/nsnmsc/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="&quot;*&quot;"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/staging/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/raw/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/derivaed/"/>
+  </context>
+  <context confirmationNeeded="false" name="QA">
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/huamsc/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/nsnmsc/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="&quot;*&quot;"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/staging/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/raw/"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" repositoryContextId="_Z-lJ0KCpEemeJY-f3wp-qg" type="id_String" value="/etl_poc/dev/derivaed/"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -179,7 +203,7 @@
     <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="0RMsyjmybrE="/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
-    <elementParameter field="DIRECTORY_HADOOP" name="DIRECTORY" value="context.DA0001_Huawei_CDR__Huamsc_Staging_Zone"/>
+    <elementParameter field="DIRECTORY_HADOOP" name="DIRECTORY" value="context.DA0001_Huawei_CDR__Huamsc_Staging_Zonet"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="DIRECTORIES"/>
     <elementParameter field="CHECK" name="INCLUDSUBDIR" value="false"/>
     <elementParameter field="CLOSED_LIST" name="CASE_SENSITIVE" value="YES"/>
@@ -312,13 +336,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ce044ff2-46f3-4a6b-97e4-483d764f4ab4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>r6/JPAhSAbxVVJM/6VjMxpVfO2w/7nmJfiZJtli6ACiwoIAz7LJbccvr81FBLgnOJxiRMCGD8oNI
-ozm8ewcwkg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b99f7310-f7eb-460a-a35f-ffd08d9db1ae"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Z7yNgnEk+MC/jg5lFarUyv5KDajldqKnOMzvOP1844EljXV8SHk5F4ybnSKVXocCa0mWutrSPfXc
-x+9XuzepPw==</DigestValue></Reference></SignedInfo><SignatureValue>erDK2iU+p5/35gg8l5TLxxzFsDTrX9cbUC+IWREfSxy9PghnIwyLUSwO0mmz3Wuhnfli4VzKISbF
-G7hpvuFjBdguxjAocl/bl72U6x7vxzbeszPYD01T9nmR/FiuAg5RypZOiNvqPjtOA6NmdkkpBWAu
-b2EFJx10AI+7YhJTrwlOBrxIAaXwCY0TMxEMQrfwVqXceytF86nMEbcsCkFMxEr+6B07DAZBQYDh
-zgY0vgwHycHZd5ZPRsZ+cnhnaCERQdai/fjEav2DwE8PqTGxoguDzUJj4C/+5aFtbI/jpN+ismxJ
-v//2WLWFxecn7PhE8ypA65fq6C/5xZ7Y6IAYRQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_493afb22-1914-4f68-9491-cb1719f30c38"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>avHLm0goPl3iEnLwKpBQ0cBV31dJJXX2+1z/e+yNiokWsv0vHayR6DWylHnFaV80C1+jeNFOoFho
+qCRojBnSMQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c8873d18-cc10-4117-b701-9ed6697039ec"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Qe2Thg4WOADOVfZIWjqG0qXKXbVIFf0vn/KszFTnr+9mFQlK6yG/0yMVtafhGQAkh3vA/wN43oWy
+mWG7TgjbPQ==</DigestValue></Reference></SignedInfo><SignatureValue>A4s9IPMDFezGpKIPtm5ZawySElTUzDJ9De7QSf/J8Rj2MBQLvFAoGrRx25AHRzyJ3n5B+QInd6KU
+Yl6tvatT4KS1m14jzsOcyE6gH1AqPjcaEcVd9JLUwN7uHeM4ydurE73+RRGJIb2jfFuaAs9P74IH
+1SXmGnPKa/la2YpYd6B+e2dYrw1oKGYoEBbXtd7TYjYIaiA8CcEoswPNYf9j0pCQKqnbl/psS8+S
+Z+j0nhDcgjrgV9z00GSGnlff4f8yYbVw/ZbdLzRREsU1qt+43UyMGnzzRyReHXPKInVqJgg22Qdn
+FszxCl6Gqf1sFGeRT8ZXNAnf12ZB8WSXhHFg+g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -340,4 +364,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b99f7310-f7eb-460a-a35f-ffd08d9db1ae" Target="#_ce044ff2-46f3-4a6b-97e4-483d764f4ab4"><Timestamp>2019-07-07 11:28:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c8873d18-cc10-4117-b701-9ed6697039ec" Target="#_493afb22-1914-4f68-9491-cb1719f30c38"><Timestamp>2019-07-07 11:34:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
