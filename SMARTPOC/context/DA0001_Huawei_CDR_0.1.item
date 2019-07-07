@@ -1,17 +1,43 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ContextType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" confirmationNeeded="false" name="Default" xmi:id="_Z-uTwKCpEemeJY-f3wp-qg" xmi:version="2.0">
-  <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" type="id_String" value="" xmi:id="_dFhFkKCpEemeJY-f3wp-qg"/>
-  <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" type="id_String" value="" xmi:id="_dFhFkaCpEemeJY-f3wp-qg"/>
-  <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" type="id_String" value="" xmi:id="_dFhFkqCpEemeJY-f3wp-qg"/>
-  <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" type="id_String" value="" xmi:id="_dFhFk6CpEemeJY-f3wp-qg"/>
-  <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" type="id_String" value="" xmi:id="_dFhFlKCpEemeJY-f3wp-qg"/>
-  <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" type="id_String" value="" xmi:id="_dFhFlaCpEemeJY-f3wp-qg"/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6cbbbb37-6a72-4280-a513-f372e4da5d30"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>49zCgmAbcm1gzPGr5fHVt4g5FddsgOUcVmPsVDgFiLdzP0E5dFXpo5KcCGI3W/64Id0TdENvWTA6
-UJ7PqGZrNQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3d126cc3-2ebd-4bd3-9d36-11edb86d2381"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>W96E/92lSYwBvWFKCb3/P982jP63t7CuT4zinnVWDR/dumPTWwVaQaCqRJiaHVJTeDvc9op2L1Uv
-AFc1ZsiWBA==</DigestValue></Reference></SignedInfo><SignatureValue>dJi7oMaE+wHBOmShzgS4NrnBujF/d1T/4d/qY4IW5EPkEhLM4qS9JMgdUgK6O13TKV6Bldj3kuHS
-SgdZIn51xR8yxry/cL61AZxAL1rg2mW/ckIRkCri+/HW+uu3KzJJ4DwFpVD2Uy42dXgOBnJPfiOQ
-qD9jHoItGD+yInrCqrpMP7qCAUn3nrhhsF1VEkJXYxBSyOcRaPNATW986RQqofmmgOaLdIYyB32+
-L1C7bjfdlRTXm48sBaLAkDpTC1GxVRw0nobu0dvbaAXU5mQdzPByduLzdERutc/DrPNS4D0wRTPP
-mmHtMu4MNOATOpaljEq3nNYyfELBy6vTBc83vQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:version="2.0">
+  <talendfile:ContextType confirmationNeeded="false" name="Default" xmi:id="_Z-uTwKCpEemeJY-f3wp-qg">
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/huamsc/" xmi:id="_dFhFkKCpEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/nsnmsc/" xmi:id="_dFhFkaCpEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" type="id_String" value="&quot;*&quot;" xmi:id="_dFhFkqCpEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/staging/" xmi:id="_dFhFk6CpEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/raw/" xmi:id="_dFhFlKCpEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/derived/" xmi:id="_dFhFlaCpEemeJY-f3wp-qg"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType confirmationNeeded="false" name="DEV" xmi:id="_KtQp8KCrEemeJY-f3wp-qg">
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/huamsc/" xmi:id="_KtQp8aCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/nsnmsc/" xmi:id="_KtQp8qCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" type="id_String" value="&quot;*&quot;" xmi:id="_KtQp86CrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/staging/" xmi:id="_KtQp9KCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/raw/" xmi:id="_KtQp9aCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/derivaed/" xmi:id="_KtQp9qCrEemeJY-f3wp-qg"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType confirmationNeeded="false" name="PRD" xmi:id="_KtQp96CrEemeJY-f3wp-qg">
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/huamsc/" xmi:id="_KtQp-KCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/nsnmsc/" xmi:id="_KtQp-aCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" type="id_String" value="&quot;*&quot;" xmi:id="_KtQp-qCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/staging/" xmi:id="_KtQp-6CrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/raw/" xmi:id="_KtQp_KCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/derivaed/" xmi:id="_KtQp_aCrEemeJY-f3wp-qg"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType confirmationNeeded="false" name="QA" xmi:id="_KtQp_qCrEemeJY-f3wp-qg">
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Landing_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Landing_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/huamsc/" xmi:id="_KtQp_6CrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone" prompt="DA0001_Huawei_CDR__Nsnmtc_Landing_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/nsnmsc/" xmi:id="_KtQqAKCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Filemask" prompt="DA0001_Huawei_CDR__Huamsc_Filemask?" promptNeeded="false" type="id_String" value="&quot;*&quot;" xmi:id="_KtQqAaCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Staging_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Staging_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/staging/" xmi:id="_KtQqAqCrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Raw_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Raw_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/raw/" xmi:id="_KtQqA6CrEemeJY-f3wp-qg"/>
+    <contextParameter comment="" name="DA0001_Huawei_CDR__Huamsc_Derived_Zone" prompt="DA0001_Huawei_CDR__Huamsc_Derived_Zone?" promptNeeded="false" type="id_String" value="/etl_poc/dev/derivaed/" xmi:id="_KtQqBKCrEemeJY-f3wp-qg"/>
+  </talendfile:ContextType>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9b61dbf1-b4b7-4c15-bc61-bc48b9b74fbd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1/GM1+JXPiDsp81Nob+Ugpw2WXee+EIRjOuDJ4BwJCw8N8zssM7aXgXJp/ZBMTuK9vyol8zYjYDG
+FSuceq5kDA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_678c4088-8025-431c-90cc-eb944a105a56"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>NPgEFrmFMsa6kDMyvSwb/HDpaurtJJn1iEWFietkVclU6Qbk/mZKeDxkpdFoES6gG9yR6lhmbox+
+XKBQgB9nlQ==</DigestValue></Reference></SignedInfo><SignatureValue>cjv8siy5NA8lOtD8TBKWi5vEV9Vt/yO8M9G9kVVKGphuj+sUvZE4PMZgqqHv6e/m4EjpHqYBbGuc
+SSvWdbcO+6p0HyCPrG203e+BU/oVqxPHI6ofrDpb4ytt64J1wymZSULd0tpQ043K7Wl+FlRK0b9D
+IbmRfOfVBygL+SqgcU0PqyGXw0x1+AyzAXcTAoF8pDWXX7K1MLLnhzJ0cG5HYHvaa+R37BbYWi8v
+M+0yWbOcBm4aNnhWLE0AygEESxLdorsYHVdWGQdU6Js26QvXj2yQ2EFY0tzzX/8WRNi5Beou95gY
+dXUiEWfvSa7odPcAIa8xQsvr6aRc6rWFtAfWzg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -33,4 +59,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3d126cc3-2ebd-4bd3-9d36-11edb86d2381" Target="#_6cbbbb37-6a72-4280-a513-f372e4da5d30"><Timestamp>2019-07-07 11:22:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ContextType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_678c4088-8025-431c-90cc-eb944a105a56" Target="#_9b61dbf1-b4b7-4c15-bc61-bc48b9b74fbd"><Timestamp>2019-07-07 11:34:23</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
