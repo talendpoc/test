@@ -226,33 +226,33 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="64">
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_qMJ6cJfmEeiVdIw6R7G4IQ"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_Vm00cKFvEem_sqDG0LFoBQ"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
-    <elementParameter field="TEXT" name="TYPE" show="false" value="MYSQL"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;Talend_Demo&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="XOWw2jdQq/4="/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;file_process_status&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.132.131.25&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;5432&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;postgres&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="POSTGRESQL"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;postgres&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="srXrac7FkBNB45aiSM5GsA=="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="SPATIAL_INDEX" show="false" value="false"/>
+    <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" show="false" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
-    <elementParameter field="CHECK" name="EXTENDINSERT" show="false" value="true"/>
-    <elementParameter field="LABEL" name="NOTE" show="false" value="(Not compatible with reject links)"/>
-    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" show="false" value="100"/>
-    <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" show="false" value="10000"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="postgres_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="SAVE_POINT" show="false" value="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
@@ -290,22 +290,18 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" show="false" value="false"/>
-    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="file_process_status" name="tDBOutput_1">
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <metadata connector="FLOW" name="tDBOutput_1">
       <column comment="" key="true" length="100" name="FILE_NAME" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="BUSINESS_DATE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="FILE_SIZE" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="10" name="FILE_SIZE" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="FILE_ARRIVAL_TIME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -317,16 +313,15 @@
       <column comment="" key="false" length="50" name="PROCESS_STATUS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <additionalProperties key="Comment" value=""/>
     </metadata>
-    <metadata connector="REJECT" label="file_process_status" name="REJECT">
+    <metadata connector="REJECT" name="REJECT">
       <column comment="" key="true" length="100" name="FILE_NAME" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="BUSINESS_DATE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="FILE_SIZE" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="10" name="FILE_SIZE" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="FILE_ARRIVAL_TIME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -340,7 +335,6 @@
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
   <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="448" posY="224">
@@ -393,13 +387,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3cb08468-ff2f-4835-a8b2-2d6790f5a3c4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>l0DslL+w8aahqYFiIq89bYs4SEVu8BN6i77Gs3XOtyrcVQ1Il0YC0quMBEkcJOO+jBnDwUAx71ga
-hycKXDexQA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_da4c2abf-b5d6-4957-af3f-9b49d28aaac7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dHHdNQqrxNudUgA/wBzkbpcspRrVGFDnU0gNjQRasGy9RPbNTIHBhk51SFHxMIhnC/6SlxqL2GYf
-8PBu/VdMSA==</DigestValue></Reference></SignedInfo><SignatureValue>ff2eDtDDEBcmx2cU2KnKW3Z2m9AMgkSdWk9Kp51pQVrmP1cg/QIA8GLfWv8xXUgPzo+ryyRUHcSb
-oC/3FLkPhMw46AJwQk/m1ZNibDqnyfflpzCZBnU/5rP77Ay25wyOJCSx1sDEhl5s5IQE/lzgbUmT
-lMyOCd7EM7o3EdrxSy0Zma2CUO+30MlebUTnoxQAfm5TeBBF41VD520MHDWuSuKMlYe6+vsdMfyv
-/K8o0rwPVQIZRVcmicN90/WiOOA6KTNnIM2bWCpoUO9a6/UgySfnc2B3x2XbhNum2ljF5f/E9RuK
-PKVXi7bIcf57zt6KtA6Ljzxkxdfc1nUw3/Niew==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_89ae4fe6-863b-4579-8984-4c6e2b0d0662"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2MoDn1DjSetvf9WiG++uxpx692p5Ymcoes/dfn8qBpUh1ylQ7mDh73tBDsF3PZoIHxO+9dMlX1g/
+4YmH/MXFPQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_05fd9b4c-5b49-4ce4-a8b0-46a19c65f5e3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XNzSSiDYBK/1DgikG5Q8NvAP3SwMir1rgsTBUF2Uok+Z+JCYFvhVbuGrIsu6PJx976ByL4GLjj8X
+wWGnCnqLKw==</DigestValue></Reference></SignedInfo><SignatureValue>MLbpcq3emrS4RG7bc1suleRHB9yRyGILE5V0LPMF9eGd8dZ+aUCIfd3n65uwMQXmzv201IsWyMLE
+WTVHnyrTEcqXmEbCMwoCyMrEbkf5fnZcKFFgz7jxoudfajFKlZ3HQt0ykipPzv12QIdRVf+OziOD
+rRHosumAJ8gRVnosaI9BOkkGAfcWidyJVd67Xm/mjRFcGA8eVtYCGJJ23Cpw+gEKDUGYMp6qrq7E
+Kf5M8mLSpI0NlrvNrnBW9wE+FuWaG8ZrS0i+LMWPQLQeA+R8Rvy3GE2e1Zfy3cE7FxClrj8QCnMF
+ODmszLwLvi2L2SuK64GUULnAX4IxFE/WdFwfXQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -421,4 +415,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_da4c2abf-b5d6-4957-af3f-9b49d28aaac7" Target="#_3cb08468-ff2f-4835-a8b2-2d6790f5a3c4"><Timestamp>2019-07-08 03:28:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_05fd9b4c-5b49-4ce4-a8b0-46a19c65f5e3" Target="#_89ae4fe6-863b-4579-8984-4c6e2b0d0662"><Timestamp>2019-07-08 12:24:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
