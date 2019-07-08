@@ -45,7 +45,7 @@
     <talend.job.stat>true</talend.job.stat>
     <talend.pigudf.groupid>org.example.smartpoc.pigudf</talend.pigudf.groupid>
     <talend.job.framework></talend.job.framework>
-    <talend.job.jvmargs>-Xms256M -Xmx1024M </talend.job.jvmargs>
+    <talend.job.jvmargs>-Xms256M -Xmx1024M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
     <talend.job.type>Standard</talend.job.type>
     <item.project.name>@ItemProjectName@</item.project.name>
     <resources.path>${basedir}/src/main/resources</resources.path>
@@ -69,11 +69,6 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>camel-cxf-2.23.1</artifactId>
-      <version>6.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.libraries</groupId>
       <artifactId>camel-spring-2.23.1</artifactId>
       <version>6.0.0</version>
     </dependency>
@@ -81,11 +76,6 @@
       <groupId>org.talend.libraries</groupId>
       <artifactId>crypto-utils</artifactId>
       <version>6.0.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-core</artifactId>
-      <version>3.3.1</version>
     </dependency>
     <dependency>
       <groupId>dom4j</groupId>
@@ -103,11 +93,6 @@
       <artifactId>jakarta.xml.soap-api-1.4</artifactId>
       <version>6.0.0</version>
       <type>1</type>
-    </dependency>
-    <dependency>
-      <groupId>javax.ws.rs</groupId>
-      <artifactId>javax.ws.rs-api</artifactId>
-      <version>2.1</version>
     </dependency>
     <dependency>
       <groupId>log4j</groupId>
@@ -317,9 +302,6 @@
     </profile>
     <profile>
       <id>include-running-log4j</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
       <properties>
         <log4j.running.dir>${current.resources.dir}/</log4j.running.dir>
       </properties>
