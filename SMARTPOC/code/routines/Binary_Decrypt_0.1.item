@@ -23,12 +23,12 @@ import java.util.Arrays;
 public class Binary_Decrypt {
 
 	@SuppressWarnings("unused")
-	private String decrypt(String binaryInputString) {
+	private String decrypt(Object binaryInputString) {
 
 		StringBuilder sb = new StringBuilder(); // Some place to store the chars
 		Arrays.stream( // Create a Stream
 
-		binaryInputString.split("(?<=\\G.{8})") // Splits the input string into 8- char-sections (Since a char has 8 bits = 1 byte)
+		((String) binaryInputString).split("(?<=\\G.{8})") // Splits the input string into 8- char-sections (Since a char has 8 bits = 1 byte)
 
 		).forEach(s -> // Go through each 8-char-section...
 
