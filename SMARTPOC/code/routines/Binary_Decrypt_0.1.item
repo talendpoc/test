@@ -1,5 +1,7 @@
 package routines;
 
+import java.util.Arrays;
+
 /*
  * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
  * it must be before the "{talendTypes}" key.
@@ -20,18 +22,20 @@ package routines;
  */
 public class Binary_Decrypt {
 
-    /**
-     * helloExample: not return value, only print "hello" + message.
-     * 
-     * 
-     * {talendTypes} String
-     * 
-     * {Category} User Defined
-     * 
-     * {param} string("world") input: The string need to be printed.
-     * 
-     * {example} helloExemple("world") # hello world !.
-     */
+	private String getTextString(String binaryInputString) {
+
+		StringBuilder sb = new StringBuilder(); // Some place to store the chars
+		Arrays.stream( // Create a Stream
+
+		binaryInputString.split("(?<=\\G.{8})") // Splits the input string into 8- char-sections (Since a char has 8 bits = 1 byte)
+
+		).forEach(s -> // Go through each 8-char-section...
+
+		sb.append((char) Integer.parseInt(s, 2)) // ...and turn it into an int and then to a char
+		);
+		return sb.toString(); // Output text (t)
+
+		}
     public static void helloExample(String message) {
         if (message == null) {
             message = "World"; //$NON-NLS-1$
