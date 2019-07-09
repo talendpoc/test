@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
@@ -102,13 +104,45 @@
     <routinesParameter id="_hA1JsJ09Eemtjd_PHZZ6Eg" name="TalendStringUtil"/>
     <routinesParameter id="_hA1Jpp09Eemtjd_PHZZ6Eg" name="TalendString"/>
   </parameters>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_791b5712-c600-46ac-999d-e78a8c27bb43"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oNs8hQ8OtBRQa+D/1vzmCsk0q0hCCvcJTQCeGHV5zzcgKB356dBX1vtBN7QchxOjlNjqySS6MiM1
-NYKDDHWw9Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f7d95d28-3b76-4214-b496-e03b866cc5da"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1pssJ9dxXcfJlAdRMjh/uDb4A0cH/+MIBsL+nB0ktuvhjXpIH9qmD4jHPxUbcI2KIPhTe4tI+Ql+
-qFhtEXmF7A==</DigestValue></Reference></SignedInfo><SignatureValue>VhdroNUf7JdYD4C6PhEzxRKF4/ReNTDJ5Pf5Fh68n5D3anwVeJPsxO8QCyZ62k930P3YEsXNrUEn
-oEzpvcGOBeClkFZtHtLs2oxLqVvliK+vGkRHIL411dxkV29rMgcsUOxT6RZcVqFIbK1RZxiOfcUg
-61m7xvcOT06Rd7zeg9WEnNjWSVsf9CmuIzCtpb21HLy0ZwqhnO03Uk4QqKy22rpyaV84qiuXTYEj
-iky1k1XNIO8Id2y43hBAjrqNb6jGB1zzVcGNDKrPkHKUmjZmYR7xt++XnMgrHliHm+tYBwxKDpKJ
-lWpUcoc655MSQBAMVxDLWmbo/fyQKzKfSTZ/Hg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+  <node componentName="tFileInputRaw" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputRaw_1"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/eduard.merjudio/Desktop/ca_hlte_binary/HL20_HL20SM1_67431720_20190501235301&quot;"/>
+    <elementParameter field="RADIO" name="AS_STRING" value="false"/>
+    <elementParameter field="RADIO" name="AS_BYTEARRAY" value="true"/>
+    <elementParameter field="RADIO" name="AS_INPUTSTREAM" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileInputRaw_1">
+      <column defaultValue="" key="false" length="0" name="content" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="StringBuilder sb = new StringBuilder(); // Some place to store the chars&#10;Arrays.stream( // Create a Stream&#10;&#10;binaryInputString.split(&quot;(?&lt;=\\G.{8})&quot;) // Splits the input string into 8-&#10;&#10;char-sections (Since a char has 8 bits = 1 byte)&#10;&#10;).forEach(s -&gt; // Go through each 8-char-section...&#10;&#10;sb.append((char) Integer.parseInt(s, 2)) // ...and turn it into an int and&#10;&#10;then to a char&#10;);&#10;return sb.toString();"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_1">
+      <column defaultValue="" key="false" length="0" name="content" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputRaw_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputRaw_1" target="tJava_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputRaw_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2d2b6976-476e-4a19-8898-8d1be8ddc21f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HwXTGn6Mu9FR42dH/wPrxtlz/9RmP1YRokDZWX2nYi4Iq9eU9gwQrc4xerHGOK3RA34J1K6eyycA
+5AilYNdM+w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fc1794e3-f20b-47ce-8079-465de7e1007c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TFyQ2fXwrXPlwIrWb/qRxOWM1Q5q4ZrgW1b3WFujo3JnMtSNxAwEsrzc3TEx/hFBTyPF/V2ofCuZ
+egHv5ZHYug==</DigestValue></Reference></SignedInfo><SignatureValue>ZfkevglShNCAu7B3AAOZ1029rTOEw9bp6q4A6Sm8Z5h7d2WeTIk1CNU2rNGvQhpJZ3AyFPCsJE+A
+wLdjFlawQrZCfi2S+j314qe+GpQ6xfdBy1HDiBGx6kTZD/H0d+8frw1rqr95iravsCoYrwPNrfIO
+oliZ1eWJwijNoSA0rNf7if/Y41YdYFk4ns/V469vkel4PIcGfexSlBZQXlVI99flVw4b6DhP6CYR
+xGNA6hNrG2uN82Ke+8Qcwar9l/NmX0Oz/ogd+ISn/0O4a0JdHSBCkXDIZZXVRnHS2/xcmWIVRfkY
+wSd7xV8t6Ej8E+lc5peQjTeqLnSiVrnM5L8Njw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -130,4 +164,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f7d95d28-3b76-4214-b496-e03b866cc5da" Target="#_791b5712-c600-46ac-999d-e78a8c27bb43"><Timestamp>2019-07-09 01:54:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fc1794e3-f20b-47ce-8079-465de7e1007c" Target="#_2d2b6976-476e-4a19-8898-8d1be8ddc21f"><Timestamp>2019-07-09 01:59:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
