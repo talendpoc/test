@@ -478,15 +478,27 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
     <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
     <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
-    <elementParameter field="PROCESS_TYPE" name="PROCESS" value=""/>
-    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value=""/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="spark_merge_nokia_cdr"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Default"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="SMARTPOC:_a8-z8KLnEem-EelRNWlvTA"/>
     <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
     <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
-    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="false"/>
+    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="true"/>
     <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="true"/>
     <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="false"/>
-    <elementParameter field="TABLE" name="CONTEXTPARAMS"/>
-    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="business_date"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.business_date"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="Src_File_Dir"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.tmp_daily_File_Dir"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="Src_File_Extension"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.Src_File_Extension"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="Tgt_File_Dir"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value=""/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="merge_file_name"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" show="false" value="false"/>
     <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
     <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
     <elementParameter field="TEXT" name="LABEL" value="Daily Loading"/>
@@ -552,7 +564,7 @@
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="SOURCE_PATH" value="context.Src_File_Dir + context.business_date"/>
-    <elementParameter field="DIRECTORY_HADOOP" name="DEST_DIR" value="context.tmp_daily_File_Dir"/>
+    <elementParameter field="DIRECTORY_HADOOP" name="DEST_DIR" value="context.Tgt_File_Dir"/>
     <elementParameter field="CHECK" name="RENAME" show="false" value="false"/>
     <elementParameter field="TEXT" name="NEWNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="MERGE" value="true"/>
@@ -649,13 +661,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b0c15509-462a-4af1-be69-9a55f3d11710"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Jb6ip9IiPjiGDH6cQ2ipTfKGLRI3J5l/PE+oK1Zjvofls1/fG9B833+K/+hMkKCRMlayym/D4cii
-VsWaW0KqAA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_878e0943-5de7-42ba-8d41-583e64848ea5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qPgDIAq/ZQ133HCCreAj3QsVpvi1NbJkgz3+C/7W2dusWHdAkXKqSaFTSk66Lp/VTnEPYEE/Zjdn
-i+Ftle7NRw==</DigestValue></Reference></SignedInfo><SignatureValue>fsmdqA9t0zavJTQTAFDbSy6+M9sfPZH5iHY1RQ5aUPWxp6o8G8HqueHo0TS71BQftbW8wxrGDR+I
-/ZyiMAOJxmXnaZyyPUljjJN/4oqVDxbtqJ5URiNVhIRwGj2zdQqaf1IlYBuHwiOeAtDkMbyzA0PH
-Jw4DzgJWOXqtv+RJIkk3VCEmxEBEQk/gI9IQO9jWUVp55ZHRhJ0JxDfjGf9UGobgW81JTsUkIFpa
-oCegefDxSQ4B3+DW+cI+N6x+KJp/e/iS8qEponyrT/4ChOdl7rna5IUYmRfLdy5vYuC7+hhmK6UO
-OAeNJQ8tbDilpBj+4ezFTzjEkOxnvrSGlLFrvg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7f8102be-58b1-45bd-81e0-43970251087c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>KSHigwf8Y3gvcFw9Iz3esmLAv1yKxXxz5SYG7GB/+T2SKpn5yfExlTLqk6LqTdism9Jj0akkWhNS
+GAZKVQUjSg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7bf10283-b7a9-43c5-8bd6-a5ec29264dea"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PKbdkXVQkqMyyDO+tA7rLg8xOVwvh1McPtGBoJ7oC2rXhhGK7x1bVg8covgKBk42WRTvpumBw4rd
+H/d+z1aztQ==</DigestValue></Reference></SignedInfo><SignatureValue>bT4PdlutwK9HyT/dEIn5DwzS0EpjGlLn51QdntMgjjJElrTt5V6DWEp4MYPbGy5tVpys6nB3hpqX
+K/z48lUGAXJY/+6apMmRxpbxuXo1PlOwDR3qluFqFz2clrdmnoGO3S6QsJisI+4vnfwraNJtHm/0
+DzKOxf9Xqou4693wCF+oCrSG4mrJm+LSoJoaT66z6WsLS4oPGJEvLI6vHinl1n+c2fyVC/K/s8RH
+DEfWGc398QSZHxnLStbExR9E4T2QFwAUQc+qJ+g3ToLn/MSUHcFwUu7XzIWvpJpaUBtLQEiKApxP
+cmP+VdiUHVfALCJCmxShZQ1V7icQy/Wr+Nnq/g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -677,4 +689,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_878e0943-5de7-42ba-8d41-583e64848ea5" Target="#_b0c15509-462a-4af1-be69-9a55f3d11710"><Timestamp>2019-07-10 09:48:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7bf10283-b7a9-43c5-8bd6-a5ec29264dea" Target="#_7f8102be-58b1-45bd-81e0-43970251087c"><Timestamp>2019-07-10 09:55:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
