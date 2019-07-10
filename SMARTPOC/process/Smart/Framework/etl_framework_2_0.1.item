@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="business_date" prompt="business_date?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="Src_File_Dir" prompt="Src_File_Dir?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="Src_File_Extension" prompt="Src_File_Extension?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="Src_File_type" prompt="Src_File_type?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="tmp_daily_File_Dir" prompt="tmp_daily_File_Dir?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="tmp_daily_File_Extension" prompt="tmp_daily_File_Extension?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="tmp_daily_File_type" prompt="tmp_daily_File_type?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="loading_type" prompt="loading_type?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="bulk_daily_File_Dir" prompt="bulk_daily_File_Dir?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="bulk_daily_File_Extension" prompt="bulk_daily_File_Extension?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="bulk_daily_File_type" prompt="bulk_daily_File_type?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="business_date" prompt="business_date?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="Src_File_Dir" prompt="Src_File_Dir?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="Src_File_Extension" prompt="Src_File_Extension?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="Src_File_type" prompt="Src_File_type?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="tmp_daily_File_Dir" prompt="tmp_daily_File_Dir?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="tmp_daily_File_Extension" prompt="tmp_daily_File_Extension?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="tmp_daily_File_type" prompt="tmp_daily_File_type?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="loading_type" prompt="loading_type?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="bulk_daily_File_Dir" prompt="bulk_daily_File_Dir?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="bulk_daily_File_Extension" prompt="bulk_daily_File_Extension?" promptNeeded="false" type="id_File" value=""/>
+    <contextParameter comment="" name="bulk_daily_File_type" prompt="bulk_daily_File_type?" promptNeeded="false" type="id_File" value=""/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" show="false" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms256M&quot;,&quot;-Xmx2g&quot;]}"/>
@@ -126,7 +126,7 @@
     <routinesParameter id="_GM7nwJWGEemNdOUXx-y74g" name="extractdate_filename"/>
     <routinesParameter id="_GM7nwJWGEemNdOUXx-y74g" name="filename"/>
   </parameters>
-  <node componentName="tHDFSList" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="160">
+  <node componentName="tHDFSList" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHDFSList_1"/>
     <elementParameter field="HADOOP_LIBRARIES" name="HDFS" show="false" value=""/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -176,7 +176,7 @@
     <elementParameter field="TEXT" name="HADOOP_LOGIN" show="false" value="&quot;kerberos&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tHDFSProperties" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="512" posY="160">
+  <node componentName="tHDFSProperties" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="512" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHDFSProperties_1"/>
     <elementParameter field="HADOOP_LIBRARIES" name="HDFS" show="false" value=""/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -221,7 +221,7 @@
       <column key="false" length="20" name="mtime_string" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="704" posY="160">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="704" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -278,7 +278,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="928" posY="160">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="928" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -330,7 +330,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tHDFSConnection" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
+  <node componentName="tHDFSConnection" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHDFSConnection_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_33lhUZ1xEemiobSKr_XuWw"/>
@@ -395,13 +395,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_cf64d7e5-f00e-41a8-aef6-57fd0c71f45b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AZ6UlvAoev6sBulTNPgUkIs9GF3utq4U+NjrTYdMHCVF/tmDikrKCYqjm3CO2pJHPV1WypX4nqK8
-sv5RfoKgZA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7d64c17f-1d12-4734-8935-521fd9609938"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jZtA4V34rTo/5MmoUk1rQVAGjXqz1kzCnodSHiG+Dv2bxoR6YR6jwMbRKcHZ6XTvnbmIusMop12a
-RLaVDDTG4g==</DigestValue></Reference></SignedInfo><SignatureValue>DQq4Gf+ed35Sk8Gb7z4KHuo3w/xcM2gK8mPutQxAiw+kV3m84w/mt3f0W0RmZJ9klpgzcwxm8P5V
-huFdc6Bn9MrTUZA08XhPciSIg7fi4IfWvhUxQR9mmZTdLbMCOBx9Qlql3aHfo6MUglBrkbRXybHT
-+tRbWiqRm2yYG1+PenqawTjZfxYL+I+1WKxNA/V7qlPHyFrfB+/eGc1TbVgvmgjxq8M+G04tf1bw
-XqTqhzBQ4SJ0WmQIUvXo5b+ndpDVYOroxKYIK7jsf3wY9xE65djHrt+C01WqO7g/IJMye4WOrXKx
-RL5hnkUZ1r4ik+B8hv/atxTwqPRB7VAkXr61cA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c951f78c-20ec-40e3-a6a9-68060f7ba82b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HGXDRT1z6QEo75x/R8DteF0ocCZ9T8nsAJstvRvmRnF0/fU2CslortSyzmCDN91PBJLD6uwSi7ss
+qS+BQE3gPw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_40b8ae16-0ed7-43fa-a48f-757aaf8c1ee2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WSdZzWCvEhAMhirjY6I7t9Fb3P7AoLYj2Ki9cVyp446uUxYnO/tmlPNK+9IwAIjNeG/thxasQMNF
+9kRPk9776Q==</DigestValue></Reference></SignedInfo><SignatureValue>EfkZLVU3sJyCRwFgsRgjJgroqlR9gBXQJmf3nscQU6fGYhe7N+/YnKhvMZVYOJeHAGlLHCplnsIM
+VTK13EHJapVdtpzv5ekhkFm7+w3CFTgdusK84HjIdIjGJJh88ExxOK188spWhjKnaae8JSeedeiQ
+6mmc6XClTpNOL+xWbXNDCZee8830qYCCG5Bmv3fpcdYGxpPen3wIyw7YLp11rrlkPZ6/PPXFbR8s
+NJphPZ4VKoeI2fJocbefRjKlX/PgZ/sV5KVLF3Tf4Nw+Q2sCvD/mMUrhPkpWLStMvqr1hfC6PIY8
+b8GgfGr4zAQMO1n08y+GtEZSFsHeiZ4PILlHQA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -423,4 +423,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7d64c17f-1d12-4734-8935-521fd9609938" Target="#_cf64d7e5-f00e-41a8-aef6-57fd0c71f45b"><Timestamp>2019-07-10 07:08:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_40b8ae16-0ed7-43fa-a48f-757aaf8c1ee2" Target="#_c951f78c-20ec-40e3-a6a9-68060f7ba82b"><Timestamp>2019-07-10 07:09:03</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
