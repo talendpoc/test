@@ -6,12 +6,12 @@
     <groupId>org.example.smartpoc</groupId>
     <artifactId>code.Master</artifactId>
     <version>7.2.1</version>
-    <relativePath>../../../../</relativePath>
+    <relativePath>../../../</relativePath>
   </parent>
   <groupId>org.example.smartpoc.job</groupId>
-  <artifactId>test</artifactId>
+  <artifactId>spark_merge_bulk_loading</artifactId>
   <version>0.1.0</version>
-  <name>SMARTPOC test-0.1.0 (0.1,Job Designs)</name>
+  <name>SMARTPOC spark_merge_bulk_loading-0.1.0 (0.1,Big Data Batch)</name>
   <properties>
     <output.resources.dir>${talend.job.name}/src/main/resources</output.resources.dir>
     <talend.job.applyContextToChildren>false</talend.job.applyContextToChildren>
@@ -19,12 +19,12 @@
     <current.int-resources.dir>${basedir}/src/main/resources</current.int-resources.dir>
     <talend.job.version>0.1</talend.job.version>
     <talend.project.name.lowercase>smartpoc</talend.project.name.lowercase>
-    <talend.job.path>smartpoc/test_0_1</talend.job.path>
+    <talend.job.path>smartpoc/spark_merge_bulk_loading_0_1</talend.job.path>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
     <talend.project.name>SMARTPOC</talend.project.name>
     <talend.product.version>7.2.1.20190620_1446</talend.product.version>
-    <talend.job.finalName>test_0_1</talend.job.finalName>
+    <talend.job.finalName>spark_merge_bulk_loading_0_1</talend.job.finalName>
     <talend.pigudf.groupid>org.example.smartpoc.pigudf</talend.pigudf.groupid>
     <talend.routine.groupid>org.example.smartpoc.code</talend.routine.groupid>
     <current.bundle.resources.dir>${basedir}/src/main/bundle-resources</current.bundle.resources.dir>
@@ -33,19 +33,19 @@
     <talend.job.context>Default</talend.job.context>
     <talend.job.date>${maven.build.timestamp}</talend.job.date>
     <current.resources.dir>${basedir}/src/main/ext-resources</current.resources.dir>
-    <talend.job.name>test</talend.job.name>
-    <talend.job.id>_hMzb0KHtEemeJY-f3wp-qg</talend.job.id>
+    <talend.job.name>spark_merge_bulk_loading</talend.job.name>
+    <talend.job.id>_bLJ7YKL-Eemq-7ulnrQx2w</talend.job.id>
     <talend.project.id>0</talend.project.id>
-    <talend.job.folder>smart/</talend.job.folder>
-    <talend.job.framework></talend.job.framework>
+    <talend.job.folder></talend.job.folder>
+    <talend.job.framework>Spark</talend.job.framework>
     <project.distribution-management.repository.url>${project.distributionManagement.repository.url}</project.distribution-management.repository.url>
-    <talend.job.type>Standard</talend.job.type>
+    <talend.job.type>Big_Data_Batch</talend.job.type>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>net.minidev</groupId>
-      <artifactId>accessors-smart</artifactId>
-      <version>1.1</version>
+      <groupId>org.roaringbitmap</groupId>
+      <artifactId>RoaringBitmap</artifactId>
+      <version>0.5.11</version>
     </dependency>
     <dependency>
       <groupId>javax.activation</groupId>
@@ -57,6 +57,11 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>antlr4-runtime-4.5.3</artifactId>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.directory.server</groupId>
@@ -103,21 +108,6 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.ow2.asm</groupId>
-      <artifactId>asm</artifactId>
-      <version>5.0.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.daikon</groupId>
-      <artifactId>audit-common</artifactId>
-      <version>0.31.8</version>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.daikon</groupId>
-      <artifactId>audit-logback</artifactId>
-      <version>0.31.8</version>
-    </dependency>
-    <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
       <version>1.8.2</version>
@@ -127,6 +117,16 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>1.7.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>avro-compiler-1.7.7</artifactId>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
@@ -184,6 +184,26 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>com.jolbox</groupId>
+      <artifactId>bonecp</artifactId>
+      <version>0.8.0.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>breeze_2.11-0.12</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>chill-java-0.8.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>chill_2.11-0.8.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>commons-beanutils</groupId>
       <artifactId>commons-beanutils</artifactId>
       <version>1.7.0</version>
@@ -231,12 +251,11 @@
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
       <version>3.2.2</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>*</artifactId>
-          <groupId>*</groupId>
-        </exclusion>
-      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>commons-compiler-3.0.0</artifactId>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -248,6 +267,11 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-compress</artifactId>
+      <version>1.4.1</version>
     </dependency>
     <dependency>
       <groupId>commons-configuration</groupId>
@@ -312,6 +336,11 @@
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
+      <version>1.1.3</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
       <version>1.2</version>
       <exclusions>
         <exclusion>
@@ -341,6 +370,11 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.ning</groupId>
+      <artifactId>compress-lzf</artifactId>
+      <version>1.0.3</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
@@ -381,6 +415,26 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.datanucleus</groupId>
+      <artifactId>datanucleus-api-jdo</artifactId>
+      <version>3.2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.datanucleus</groupId>
+      <artifactId>datanucleus-core</artifactId>
+      <version>3.2.10</version>
+    </dependency>
+    <dependency>
+      <groupId>org.datanucleus</groupId>
+      <artifactId>datanucleus-rdbms</artifactId>
+      <version>3.2.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derby</artifactId>
+      <version>10.12.1.1</version>
+    </dependency>
+    <dependency>
       <groupId>dom4j</groupId>
       <artifactId>dom4j</artifactId>
       <version>1.6.1</version>
@@ -408,6 +462,11 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>14.0.1</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-annotations</artifactId>
       <version>2.7.3.2.6.0.3-8</version>
@@ -430,6 +489,11 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>hadoop-auth-2.7.3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-aws</artifactId>
       <version>2.7.3.2.6.0.3-8</version>
@@ -450,6 +514,11 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common</artifactId>
+      <version>2.7.3</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
@@ -479,6 +548,11 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>hadoop-hdfs-2.7.3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-mapreduce-client-app</artifactId>
       <version>2.7.3.2.6.0.3-8</version>
@@ -499,6 +573,11 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-mapreduce-client-core</artifactId>
+      <version>2.7.3</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
@@ -589,6 +668,16 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>hive-exec-1.2.1.spark2</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>hive-metastore-1.2.1.spark2</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.htrace</groupId>
       <artifactId>htrace-core</artifactId>
       <version>3.1.0-incubating</version>
@@ -634,6 +723,16 @@
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.6.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.6.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
       <version>2.6.6</version>
       <exclusions>
@@ -653,6 +752,16 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-core-asl</artifactId>
+      <version>1.9.14-TALEND</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.6.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.jackson</groupId>
@@ -678,6 +787,21 @@
     </dependency>
     <dependency>
       <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.9.14-TALEND</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>jackson-module-paranamer-2.6.7</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-scala_2.11</artifactId>
+      <version>2.6.7.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
       <artifactId>jackson-xc</artifactId>
       <version>1.9.13</version>
       <exclusions>
@@ -686,6 +810,11 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>janino-3.0.0</artifactId>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.jamesmurty.utils</groupId>
@@ -697,6 +826,16 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>javax.ws.rs-api-2.0.1</artifactId>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>javax.xml.bind</groupId>
@@ -732,6 +871,11 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>javax.jdo</groupId>
+      <artifactId>jdo-api</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+    <dependency>
       <groupId>com.sun.jersey</groupId>
       <artifactId>jersey-client</artifactId>
       <version>1.9</version>
@@ -741,6 +885,11 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet-core</artifactId>
+      <version>2.22.2</version>
     </dependency>
     <dependency>
       <groupId>com.sun.jersey</groupId>
@@ -754,6 +903,11 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-server</artifactId>
+      <version>2.22.2</version>
+    </dependency>
+    <dependency>
       <groupId>net.java.dev.jets3t</groupId>
       <artifactId>jets3t</artifactId>
       <version>0.9.0</version>
@@ -763,11 +917,6 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.libraries</groupId>
-      <artifactId>job-audit</artifactId>
-      <version>1.0</version>
     </dependency>
     <dependency>
       <groupId>joda-time</groupId>
@@ -803,9 +952,19 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>net.minidev</groupId>
-      <artifactId>json-smart</artifactId>
-      <version>2.2.1</version>
+      <groupId>org.json4s</groupId>
+      <artifactId>json4s-ast_2.11</artifactId>
+      <version>3.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>org.json4s</groupId>
+      <artifactId>json4s-core_2.11</artifactId>
+      <version>3.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>org.json4s</groupId>
+      <artifactId>json4s-jackson_2.11</artifactId>
+      <version>3.2.11</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet.jsp</groupId>
@@ -830,6 +989,16 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>1.7.16</version>
+    </dependency>
+    <dependency>
+      <groupId>com.esotericsoftware</groupId>
+      <artifactId>kryo-shaded</artifactId>
+      <version>3.0.3</version>
+    </dependency>
+    <dependency>
       <groupId>org.fusesource.leveldbjni</groupId>
       <artifactId>leveldbjni-all</artifactId>
       <version>1.8</version>
@@ -841,24 +1010,39 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>libfb303-0.9.2</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>libthrift-0.9.2</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
     <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.3.0-alpha4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>lz4-1.3.0</artifactId>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>1.3.0-alpha4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>metrics-core-3.1.2</artifactId>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
-      <groupId>org.talend.daikon</groupId>
-      <artifactId>logging-event-layout</artifactId>
-      <version>0.31.8</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>metrics-json-3.1.2</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.esotericsoftware</groupId>
+      <artifactId>minlog</artifactId>
+      <version>1.3.0</version>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>
@@ -894,6 +1078,11 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
       <groupId>com.squareup.okhttp</groupId>
       <artifactId>okhttp</artifactId>
       <version>2.4.0</version>
@@ -927,6 +1116,36 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>paranamer-2.3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>parquet-column-1.8.1</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>parquet-common-1.8.1</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>parquet-encoding-1.8.1</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>parquet-format-2.3.0-incubating</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>parquet-hadoop-1.8.1</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
       <version>2.6.1</version>
@@ -936,6 +1155,31 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>2.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.11.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang.modules</groupId>
+      <artifactId>scala-parser-combinators_2.11</artifactId>
+      <version>1.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-reflect</artifactId>
+      <version>2.11.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang.modules</groupId>
+      <artifactId>scala-xml_2.11</artifactId>
+      <version>1.0.2</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -962,7 +1206,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.7.10</version>
+      <version>1.7.16</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -987,6 +1231,66 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>snappy-java-1.0.5</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-catalyst_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-core_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-hive_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-launcher_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-mllib-local_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-mllib_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-network-common_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-network-shuffle_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-sql_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-tags_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spark-unsafe_2.11-2.1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>javax.xml.stream</groupId>
       <artifactId>stax-api</artifactId>
       <version>1.0-2</version>
@@ -999,8 +1303,24 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>talend-mapred-lib</artifactId>
+      <version>7.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>talend_file_enhanced_20070724</artifactId>
       <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>winutils-hadoop-2.6.0</artifactId>
+      <version>6.0.0</version>
+      <type>exe</type>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.xbean</groupId>
+      <artifactId>xbean-asm5-shaded</artifactId>
+      <version>4.4</version>
     </dependency>
     <dependency>
       <groupId>xerces</groupId>
