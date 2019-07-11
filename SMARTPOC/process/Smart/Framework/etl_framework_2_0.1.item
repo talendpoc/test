@@ -482,6 +482,7 @@
   </node>
   <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
     <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
     <elementParameter field="PROCESS_TYPE" name="PROCESS" value="spark_merge_nokia_cdr"/>
@@ -597,22 +598,34 @@
     <elementParameter field="TEXT" name="HADOOP_LOGIN" show="false" value="&quot;kerberos&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="384">
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
     <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
     <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
-    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="Spark_sample_test"/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="spark_merge_nokia_cdr"/>
     <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Default"/>
-    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="SMARTPOC:_q0an0KFUEemeJY-f3wp-qg"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="SMARTPOC:_a8-z8KLnEem-EelRNWlvTA"/>
     <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
     <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
     <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="true"/>
     <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="true"/>
     <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="false"/>
-    <elementParameter field="TABLE" name="CONTEXTPARAMS"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="business_date"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.business_date"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="Src_File_Dir"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.Src_File_Dir + context.business_date"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="Src_File_Extension"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.Src_File_Extension"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="Tgt_File_Dir"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.Tgt_File_Dir"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="merge_file_name"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.merge_file_name"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" show="false" value="false"/>
     <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
     <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="TEXT" name="LABEL" value="Bulk Loading"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tRunJob_1"/>
   </node>
@@ -634,13 +647,13 @@
     <elementParameter field="TEXT" name="NUMBER_PARALLEL" value="20"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate2"/>
   </connection>
-  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tHDFSList_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tHDFSList_1" target="tRunJob_2">
-    <elementParameter field="MEMO_JAVA" name="CONDITION" value="context.loading_type.equals(&quot;bulk&quot;)"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If2"/>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tHDFSList_1" offsetLabelX="0" offsetLabelY="0" source="tHDFSList_1" target="tRunJob_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
   </connection>
-  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tHDFSList_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tHDFSList_1" target="tRunJob_1">
-    <elementParameter field="MEMO_JAVA" name="CONDITION" value="context.loading_type.equals(&quot;daily&quot;)"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If1"/>
+  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tHDFSList_1" offsetLabelX="0" offsetLabelY="0" source="tHDFSList_1" target="tRunJob_2">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="context.loading_type.equals(&quot;bulk&quot;)"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If2"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHDFSProperties_1" offsetLabelX="0" offsetLabelY="0" source="tHDFSProperties_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -693,13 +706,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9ad0f5c7-2322-4172-a5f8-6b17c10b6db6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AgeWFHC/V+bdyys/uTbndfHSz5n9jEaT6BKI+p90mWPyGAPF+MxCwm6tGbFZekematvq9N3n7Row
-eNog4/Je4A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_53550945-8eda-42b0-ae4a-da5d5f5a3eb3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lFJj+1Qu/eU1/eK2BFWPCRpSOFnB67G28JQ3av7Yhs1UWsxIS4Cxv34J/B68G+8lhTes3zxcwnmE
-2rb9al1cdg==</DigestValue></Reference></SignedInfo><SignatureValue>HVw+7bgK3DjV4j9h5tmTRKvM3fFdHhX94j4lj3NmuLDBI2CCjHwYVAtP9HiuUF7PiI5LEol1rerw
-b6dkb7W71OdugAWJd8wNZ8X3JUyFPbijE8Z6J4Vb+9aNLi7q93EcyglMYzzY8kWUaCyABoIB7WNv
-Ytsm8/BmxOsU6cFCrYKRNxRtC/Es1+cPEkHSu5Hm/CYWDTFA23hTAn2j4POvkiHcb1iK0cq3m3Tm
-F0SmEWmR0bOizo+Kyc9O5Sy99QAJ8w/NWjx02welyRn3IFasH+2NSk07EOc/qnIMDuk0ffTwHfyu
-1JkSrvu4xiNmuse/JUkKhIFBr5LfeBlO15yIiw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f42cc7b5-34cf-46de-bb84-e11e5bb8410f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SovPGDvfNYl313YHxbheGL568X9/7p/Gtse7y2mu2fpTloAR9/AbEb6rvrTRFj3lbjQRViw/N6m1
+agH8DelIiw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ec7b7178-ff8e-470a-bc5d-3a494d034790"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>j9OrPE9W5LZCYDDXgRel/CyjUAxBZAG8lqbKJDrGpylLQ2pufblhEW2a2D0d7jA0P7VYG8QvYW05
+cue6XWHX7A==</DigestValue></Reference></SignedInfo><SignatureValue>FmKE3Pg8OGBETtSiWNPcvxaQVkTLIhj/8IoksZ7l8uZx2gxdVOTZagil3hQQphbBXRsIjgRkP1ba
+Str/FnaVtBRpcGMuR8lyyKKL4Mx9WfrOTAX/+cYvG7/eO3rvHEFRRSoqz5akHUQzrwhsk4rWcp5m
+2oAoQycF45EJeo90wAD6N8MtGfuy9LS4y0UBoPEOEQRW6EJMwYKxfspADrb0zHSPCahy6VVSNywW
+WWTQzwqHysk71shWP2nJb+1Fr66iKMVDi1LOj905Oo78mK+oxUY7poyH4aL8FXrhTNG5GEiXW/AW
+RB+hOCRhhT3+WRbr3HwG5HrBfOxPAjIcdq3w9Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -721,4 +734,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_53550945-8eda-42b0-ae4a-da5d5f5a3eb3" Target="#_9ad0f5c7-2322-4172-a5f8-6b17c10b6db6"><Timestamp>2019-07-11 08:07:54</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ec7b7178-ff8e-470a-bc5d-3a494d034790" Target="#_f42cc7b5-34cf-46de-bb84-e11e5bb8410f"><Timestamp>2019-07-11 09:11:20</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
